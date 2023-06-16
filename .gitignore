@@ -1,3 +1,8 @@
+# Ignored directors
+# For the creation of html versions:
+*comparator_files/^
+*music_market_comparators_files/^
+
 # History files
 .Rhistory
 .Rapp.history
