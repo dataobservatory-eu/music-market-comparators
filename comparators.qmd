@@ -1,8 +1,14 @@
 ---
 title: "A Market Comparator Model for Valuing the Use of Music"
 author: "Daniel Antal"
+version: "0.1.0"
+date: "2023-06-16"
+abstract: "This technical report fulfils a subtask of the _Economy of music in Europe: Methods and indicators_ report."
+description-meta: "This technical report fulfils a subtask of the D1.1 Economy of music in Europe: Methods and indicators of the Work Package 1 of the Open Music Europe (OpenMuse): An Open, Scalable, Data-to-Policy Pipeline for European Music Ecosystems project, supported by the Horizon Europe Grant agreement ID: 101095295.This methodological paper, and the entire report, is developed in accordance with the Open Policy Analysis Guidelines, and it is available in an open repository with standardised file structure and open components."
 format: 
-  docx: default
+  docx:
+    reference-doc: docx/OpenMusE_template.docx
+    doi: 10.5281/zenodo.8046977
   html: 
     toc: true
     toc-depth: 3
@@ -24,7 +30,7 @@ library(here)
 
 ::: callout-note
 
-This technical report is a subtask of the _D1.1 Economy of music in Europe: Methods and indicators_ of the Work Package 1 of the [Open Music Europe (OpenMuse)](https://cordis.europa.eu/project/id/101095295): _An Open, Scalable, Data-to-Policy Pipeline for European Music Ecosystems_ project, supported by the Horizon Europe Grant agreement ID: 101095295.
+This technical report fulfils a subtask of the _D1.1 Economy of music in Europe: Methods and indicators_ of the Work Package 1 of the [Open Music Europe (OpenMuse)](https://cordis.europa.eu/project/id/101095295): _An Open, Scalable, Data-to-Policy Pipeline for European Music Ecosystems_ project, supported by the Horizon Europe Grant agreement ID: 101095295.
 
 This methodological paper, and the entire report, is developed in accordance with the [Open Policy Analysis Guidelines](http://www.bitss.org/wp-content/uploads/2019/03/OPA-Guidelines.pdf), and it is available in [an open repository](https://github.com/dataobservatory-eu/music-market-comparators) with standardised file structure and open components.
 
@@ -35,11 +41,11 @@ Subjects: [Music industry](https://id.loc.gov/authorities/subjects/sh85141927.ht
 
 Both the publishing and recording side of the industry exploit intellectual property, i.e. author's rights (copyrights) and neighbouring rights, and gives licenses for the use of the music. The publishing side also licenses live performances, even when the composer is present on the live performance stage. The exploitation is based on licensing agreements, which put a price tag on various uses. The revenue of the rightsholders is a quantity of the use multiplied by this price.
 
-In the music industry very few organisations have an opportunity to set prices. Because author's rights and neighboring rights are legally created monopolies, the price setting is often regulated, and the provision of the license is compulsory. And because of the high fragmentation of the supply side of the music, most creators and enterprises are either price takers, or set prices collectively. Individual price settings, for example, licensing for exploitation on theatrical stages, is market niche that affects a minority of rightsholders and a small fraction of the total market revenues. Until the emergence of music streaming, the buyer side of the music industry was so much more concentrated than the seller side that, for practical reasons, music was sold in bundles. If an artist released a record and gave the mandate to license it to radio or television stations, it was impossible to revoke this license (it became part of a so-called 'blanket license').
+In the music industry very few organisations have an opportunity to set prices. Because author's rights and neighbouring rights are legally created monopolies, the price setting is often regulated, and the provision of the license is compulsory. And because of the high fragmentation of the supply side of the music, most creators and enterprises are either price takers, or set prices collectively. Individual price settings, for example, licensing for exploitation on theatrical stages, is market niche that affects a minority of rightsholders and a small fraction of the total market revenues. Until the emergence of music streaming, the buyer side of the music industry was so much more concentrated than the seller side that, for practical reasons, music was sold in bundles. If an artist released a record and gave the mandate to license it to radio or television stations, it was impossible to revoke this license (it became part of a so-called 'blanket license').
 
 There are several licensing models present in the current music markets, which makes valuation and price comparison very challenging.
 
-Another complicating factor is the presence of various rights that are often licensed separately, but the legal use of the music requires the acquisition of all necessary licenses. A film producer may obtain a license from the publishing side of a song, but cannot use it without the individually priced master (recording) right.
+Another complicating factor is the presence of various rights that are often licensed separately, but the legal use of the music requires the acquisition of all necessary licenses. A film producer may obtain a license from the publishing side of a song but cannot use it without the individually priced master (recording) right.
 
 ## Methodology
 
@@ -49,13 +55,13 @@ In the European Union, copyrights are treated as constitutionally protected righ
 
 ### Fair Value and Equitable Remuneration
 
-Copyrights and neighbouring rights are governed by international law, and in Europe, they are further harmonized by EU law. The valuation principles of intellectual property are set by various standards set by the World Intellectual Property Organization and the International Financal Reporting Standards Board. The IFRS standards are incorporated into EU accounting law, and the WIPO standards have a similar international law underpinning as the more specific copyright and neighbouring right. Even though every European Union member state has its own copyright and accounting laws, they are harmonised to the degree that we can create rather portable valuation models.
+Copyrights and neighbouring rights are governed by international law, and in Europe, they are further harmonized by EU law. The valuation principles of intellectual property are set by various standards set by the _World Intellectual Property Organization_ (WIPO) and the _International Financial Reporting Standards Board_ (IFRS). The IFRS standards are incorporated into EU accounting law, and the WIPO standards have a similar international law underpinning as the more specific copyright and neighbouring right. Even though every European Union member state has its own copyright and accounting laws, they are harmonised to the degree that we can create rather portable valuation models.
 
 Music's valuation and price setting must comply with the broadest fair value principles (set by international financial reporting standards) in light of the intellectual property standards set by WIPO. Copyright and neighbouring rights law have special provisions, often called "equitable remuneration." From an economic perspective, we treat equitable remuneration as a special case of fair valuation. Even when equitable remuneration is not applicable in the music industry, we believe the broader fair valuation principle should yield a similar result.
 
 Recently, equitable remuneration received a perhaps oversized attention due to the surrounding policy debates in the United Kingdom. Equitable remuneration is originally connected to a compulsory license that must be paid when recorded music is played in a publicly accessible location to the performing artists and music producers. Strictly speaking, equitable remuneration concerns only a relatively minor portion of the music ecosystem's income. In our understanding, however, equitable remuneration is just a legal basis to a particular form of fair compensation---governed by the fair value and the arm's length standard and competition law.
 
-*Equitable remuneration* is a legal concept which has an economic aspect. In international law, it was first enshrined as Convention C100 of the ILO, stipulating that men and women should receive equal pay for equal work [@ilo_c100]. Within the context of international copyright law, it was introduced as a modification of the Berne Convention by the Rome Convention for the remuneration of the broadcasting of recorded fixation of music works (recordings) since 1971[^1]. Equitable remuneration is originally connected to a compulsory license that must be paid when recorded music is played in a publicly accessible location to the performing artists and music producers. In a compulsory licensing regime the rightsholders are not in a position to negotiate the royalty rates or deny use to any business entity[^2]. because it is not a negotiated market rate. The payable rate is called *equitable* (and, in some jurisdictions, *fair*) . The law stipulates in these cases the rate must be set *as if* they have negotiated in a market transaction of two willing parties without monopoly (supplier power) or monopsony (buyer power) In economic terms, these rates must be set on a *fair value* basis.
+*Equitable remuneration* is a legal concept which has an economic aspect. In international law, it was first enshrined as Convention C100 of the ILO, stipulating that men and women should receive equal pay for equal work [@ilo_c100]. Within the context of international copyright law, it was introduced as a modification of the Berne Convention by the Rome Convention for the remuneration of the broadcasting of recorded fixation of music works (recordings) since 1971[^1]. Equitable remuneration is originally connected to a compulsory license that must be paid when recorded music is played in a publicly accessible location to the performing artists and music producers. In a compulsory licensing regime, the rightsholders are not in a position to negotiate the royalty rates or deny use to any business entity[^2]. because it is not a negotiated market rate. The payable rate is called *equitable* (and, in some jurisdictions, *fair*) . The law stipulates in these cases the rate must be set *as if* they have negotiated in a market transaction of two willing parties without monopoly (supplier power) or monopsony (buyer power) In economic terms, these rates must be set on a *fair value* basis.
 
 [^1]: This right is further elaborated by the WIPO Performances and Phonograms Treaty (WPPT). These copyright conventions are administered by the WIPO [@wipo_copyright_treaty; @wipo_wppt].
 
@@ -65,9 +71,7 @@ The equitable remuneration standards in international treaties do not set a stan
 
 Equitable remuneration is not a valuation or pricing concept, but it is an important legal mechanism to ensure that copyright and neighbouring rightsholders are remunerated. In our understanding, equitable remuneration should happen at *fair value* as defined by economics and international accounting standards. 
 
-When intellectual property is sold (against a lump-sum payment), licensed (for periodical payment), or used as a pledge against a loan, the transaction must comply with the *Fair Value* standard. This standard, similarly to copyright law, follows international law. While it is transposed into national law in somewhat different ways, it cannot be altered fundamentally. The Fair Value standard of the *International Financial Reporting Board* has been incorporated into national European laws via EU law (and it remained UK law after Brexit, too.)
-
-When intellectual property is sold (against a lump-sum payment), or licensed (for periodical payment), or used as a pledge against a loan, the transaction must comply with the *Fair Value* standard. This standard is, similarly to copyright law, set by international law, which generally can only in detail be modified by UK law. The Fair Value standard of the *International Financial Reporting Board* has been incorporated into UK law law via EU law and remained UK law after Brexit. Our understanding is that music prices should mainly follow the Fair Value standards, but they are also inspired by the more general *arm's length* principles: whenever a market transaction is not possible, the compulsory conditions should resemble of something that two market powers without power or proximity of interests (*at arm's length*) would agree to pay.
+When intellectual property is sold (against a lump-sum payment), licensed (for periodical payment), or used as a pledge against a loan, the transaction must comply with the *Fair Value* standard. This standard, similarly to copyright law, follows international law. While it is transposed into national law in somewhat different ways, it cannot be altered fundamentally. The Fair Value standard of the *International Financial Reporting Board* has been incorporated into national European laws via EU law (and it remained UK law after Brexit, too.) Our understanding is that music prices should mainly follow the Fair Value standards, but they are also inspired by the more general *arm's length* principles: whenever a market transaction is not possible, the compulsory conditions should resemble of something that two market powers without power or proximity of interests (*at arm's length*) would agree to pay.
 
 In 2008, the global recording industry body, IFPI, published *Valuing the use of recorded music*, created by PriceWaterhouseCooper [@pwc_valuing_2008]. This excellent methodological guide applies the WIPO and IFRS standards [@ifrs_fair_value_2011; @flignor_orozco_ip_valuation_2006; @puca_intangible_2019] on valuing copyrights in more practical terms for the music industry. The valuation principles are enshrined in the fair valuation principles of the WIPO and the fair value principles of the International Financial Standards Board---their use is not a recommendation but a statutory obligation in most IFRS countries.
 
@@ -93,7 +97,9 @@ If we use the *market approach* for valuations, we must consider the differences
 
 -   The **mechanical licensing model** is used for physical products, legalized digital downloads, and home copying and has lump sum values, paid upfront and for perpetuity. In the case of home copying levies/compensation, the sum is not expressed per unit, but in annual lump sums, which are historically connected to the mechanical pricing model. (See *Private Copying in Croatia* where we explain in detail this analogy [@antal_pcr_croatia_2019]). The mechanical licensing model is well harmonised globally via BIEM, is the international organisation representing mechanical rights societies.
 
--   The streaming model is *de facto* harmonised by the fact that the major players in the world are the same, and they are using similar model contracts. Legally speaking, the solutions differ among the UK, U.S., and EU solutions, but the streaming model is always a hybrid of the mechanical licensing and the public performance models. A streaming provider needs to have a license from both the publishing side (that is present in mechanical licensing) and all interested parties that are present in public performance licensing. In streaming, the default accrual and payment period is the month.
+-   The **streaming model** is *de facto* harmonised by the fact that the major players in the world are the same, and they are using similar model contracts. Legally speaking, the solutions differ among the UK, U.S., and EU solutions, but the streaming model is always a hybrid of the mechanical licensing and the public performance models. A streaming provider needs to have a license from both the publishing side (that is present in mechanical licensing) and all interested parties that are present in public performance licensing. In streaming, the default accrual and payment period is the month.
+
+-   The UUC model (mainly applied by YouTube) is very different.
 
 These licensing models are are very well harmonised internationally. Our model could be easily transposed to any EU member state or the United Kingdom, and even to the U.S., if we consider the problem of radio transmission licensing in that jurisdiction. It is important to notice that while the same principles can be applied in many jurisdictions, the actual value of the rights will differ in each country because of different market and regulatory conditions.
 
@@ -103,7 +109,7 @@ We translated the revenues from these income streams, excluding the background m
 
 The regulation of free uses, particularly the home copying exception and its remuneration, is different in each country which has this exception at all----but private copying levies, when applicable, do follow an adopted form of mechanical licensing. The compensation is annualised, like in public performance, and the rates (prices) are somehow related to the mechanical royalty rates.
 
-The UUC model (mainly applied by YouTube), as recognised by the scoping report, is very different.
+
 
 ### Private Copying and Illegal Activities {#illegal}
 In this report, we do not distinguish among various unlicensed music uses. There are unlicensed uses that do not fall under the private copying exception and, therefore, they could be persecuted by the Slovak state, for example. The rightsholders could claim damages from users on a different legal basis.
@@ -145,25 +151,39 @@ In an EU jurisdiction, before the implementation of the DSM Directive, we can ob
 Our solution in the Hungarian and Slovak models was to report figures with and without the inclusion of UUC, which was dominated by the use of YouTube. As a base case, we excluded UUC uses from the market comparators as there was no sufficient price harmonisation and a sufficiently similar contracting practice or legal basis for the revenues.
 
 
-# Data needs
+## Data needs
 
 The highly globalised music industry generates two important international reports: the *Global Collection Reports* of CISAC, which contains total revenues from collectively managed author's revenues, and IFPI's *Global Music Report* of the IFPI, which reports the recording (producer) side of the industry, which covers total revenues in almost all territories for producers and partly performers. These reports were designed to set business targets for larger organisations, and they do not contain price or volume data, only revenue data, which allows minimal economic analysis. The more fragmented live music industry has no comprehensive global or European report. We also do not have a truly comprehensive report on global publisher revenues that are not collectively managed. These reports are not suitable for an economic market analysis because they do not contain prices and quantities, only aggregated revenues. There are many national market studies available, but only a few of them try to quote volume or use data and price data. CISAC and IFPI are global organisations, and their reports are based on an internal survey of their members. Most industry reports are member self-reported studies.
 
 Both organisations collect (rather different) international data, which is only available to their members. Because CISAC had been earlier accused of price fixing and made an agreement with the European Commission, the organisation is particularly careful about even recording price data. IFPI has more comprehensive economic analysis; in 2008, it even published a very useful pricing guide [@pwc_valuing_2008]. National music industry reports are also available with variable depth of content and analysis, like the UK Music in Numbers series. These reports contain limited information for a thorough economic analysis or valuation, partly because the conflicts of interests within the national music industries, for example, among publishers and producers and producers and performers, do not allow the systematic collection and dissemination of such information.
 
-Our Open Music Europe project grew out of the the Central & Eastern European Music Industry Databases (CEEMID) initiative in 2014 [@artisjus_measuring_2014], in which rightsholders from three countries attempted to solve these data problem, and bring seemingly data poor Central European countries to a level of data availability that allows better price setting or the creation of better creative industry policies or business strategies.
+Our Open Music Europe project grew out of the Central & Eastern European Music Industry Databases (CEEMID) initiative in 2014 [@artisjus_measuring_2014], in which rightsholders from three countries attempted to solve these data problem, and bring seemingly data poor Central European countries to a level of data availability that allows better price setting or the creation of better creative industry policies or business strategies.
 
 Music organisations usually do not possess the information that would be desirable for analysing the market from an economic point of view. Surveying rightsholders and users are very difficult, though, because neither rightsholders nor works or recordings have an authoritative description of their population. Only very advanced inverse sampling techniques (which require vast amounts of data) can reveal price and volume movements when the analyst cannot access full transactional logs.
 
 Our Open Music Europe project grew out of the the Central & Eastern European Music Industry Databases (CEEMID) initiative in 2014 [@artisjus_measuring_2014], in which rightsholders from three countries attempted to solve these data problem, and bring seemingly data poor Central European countries to a level of data availability that allows better price setting or the creation of better creative industry policies or business strategies. The Hungarian, Slovak, and Croatian reports were based on statistical data created by the administrative records of the local collective management agencies, local market research, international data sources, and independent surveys. They showed that many of the data gaps identified by the *Feasibility Study for the establishment of a European music observatory* can be filled, but with data collection and processing needs that most national organisations alone do not possess [@antal_proart_2015; @antal_growth_2017; @antal_slovenskom_hudobnom_2019; @antal_pcr_croatia_2019], and eventually we realised that data problems of more advanced, Western markets and of those future markets like Armenia' showed very similar data/estimation problems.
 
-### Volumes {#estimating-volumes}
+### Volumes {#volumes}
 
 The most notable problem for any economic analysis of the music sector is the lack of volume information for the most important uses: broadcasting and retransmission, and various forms of licensed and UUC streaming (mainly YouTube.) The public music industry sources do not contain the number of exploitations (uses), the hours of exploitation (uses), or even the number of users.
 
 Detailed volume data usually exists, though it is only sometimes available from the administrative records of a central source, which is not designed for statistical purposes and often hard to access. Live music is collectively the most significant part of the music industry, but it needs to be more cohesive, and except for a few small and developed national markets, there are no real central ticketing services and central points of ticketing information. However, because live performances, in most cases, exploit the music creator's copyright (except for early and classical music and authentic folk music that is not, or no longer subject to copyright protection), music performances are licensed by collective management organisations. There is always a certain level of latency --- some shows go unreported ---, but such agencies usually have detailed volume information (number of events, their audience volumes, ticket prices or revenues, and even the actual works used for royalty payment.)
 
 Similarly, the use of recorded music in most cases has full transactional data. Streaming providers pay for every single use, and mechanical licensing is based on the mechanical copies made (in the form of vinyl records, CDs, or downloadable files.) In some countries, broadcasting and re-transmission have a complete transactional log; in other cases, it has large use samples.
+
+Rightsholders often have full or near-full transaction details for market-based cultural activities, such as sales of records or concert tickets. However, private copying is not a market-based activity, and no sales logs are present. The problem with these data sources is that they are business confidential and fragmented and lack a common collection methodology. It is possible to integrate this data, but often it is more useful to collect more aggregated forms of data.
+
+To arrive at a common denominator of users and uses, we calculate notional hours of music enjoyment in the form of attending concerts, listening to radio or streaming services, or the respondent's record collection. 
+
+### Prices {#prices}
+
+The price information is always missing from the public music industry reports, and critically, in the absence of volume data, even price averages cannot be calculated from total revenues. The prices are very stable in some licensing models, for example, in such as mechanical licensing (international agreements set them), or in many countries in the public performance model, when broadcasting and retransmission tariffs often do not change for more than a decade. They are fluctuating monthly on licensed streaming platforms.
+
+## Estimation strategies
+
+Almost all recorded industry transactions have full transactional detail (use, licensing data, price), and to a lesser extent, live music performances have rich transactional data. In statistics, we call these information sources administrative records, which contain detailed information that was not designed for statistical purposes.
+
+To use such data, we must overcome many data processing steps. We must bring them to the same timeframe, same functional currency, and remove personal or business identifiers.
 
 The Digital Music Observatory has been following the methodological guidelines of the former *ESSNet-Culture* statistical working group. These methods were synthesised from the best practices found by ESSNet-Culture, a working group set up by Eurostat and 15 member states' national statistical offices to measure cultural and creative industries. The ESSNet-Culture working group recommends measuring cultural access and participation (including market- and non-market forms) based on the ICET model [@frank_guy_essnet-culture_2012, pp 237-239].
 
@@ -173,43 +193,36 @@ The Digital Music Observatory has been following the methodological guidelines o
 -   **T**ransaction: to buy art and to buy or reserve tickets for shows.
 
 The ICET model is based on a long history of quantitative sociology and media research with almost 50 years of research history. It is a well-established methodology. For more details, we conducted cultural access and participation surveys with it see [@de_haan_virtuele_2008; @de_haan_nowadays_2012].
+<!-- Following the ICET model, we created surveys that measured the missing variables in a way that could be related to transactions. (The ICET abbreviation stands for information, communication, enjoyment, and transactions.) -->
 
-Following the ICET model, we created surveys that measured the missing variables in a way that could be related to transactions. (The ICET abbreviation stands for information, communication, enjoyment, and transactions.)
-
-Rightsholders often have full or near-full transaction details for market-based cultural activities, such as sales of books or concert tickets. However, private copying is not a market-based activity, and no sales logs are present. The problem with these data sources is that they are business confidential and fragmented and lack a common collection methodology. It is possible to integrate this data, but often it is more useful to collect more aggregated forms of data.
-
-To arrive at a common denominator of users and uses, we calculated notional hours of music enjoyment in the form of attending concerts, listening to radio or streaming services, or the respondent's record collection. While self-reported surveys tend to be biased, they are consistently biased. They may overstate the actual hours of use but are not biased when expressed as the market share of radio transmission and licensed music streaming.
-
-### Prices {#estimating-prices}
-
-The price information is always missing from the public music industry reports, and critically, in the absence of volume data, even price averages cannot be calculated from total revenues. Of course, the average price would be only a starting point in cases where the prices are not uniform. As we will show, the prices are very stable in some forms, such as mechanical licensing (international agreements set them), somewhat variable in broadcasting and retransmission (they change annually), and fluctuating monthly in streaming.
-
-Price comparison is challenging in the music sector because various forms of exploitation of the underlying copyright or neighbouring right (the "revenue streams") have different licensing and contracting models. The prices of mechanical reproduction, public performance and broadcasting/transmission are based on annual use and annual payments. Because some earned royalties are very small, royalty management organisations do not pay out but accumulate earnings where money transfer and accounting costs would be higher or would take most of the payout.
-
-The streaming licenses, which usually make a form of a hybrid between a mechanical and public performance license, have a monthly payment schedule, but the revenues cannot be treated strictly monthly. The typical revenues do not meet the monthly minimal payout thresholds ---in fact, the typical (median) earning has been zero in the Consolidated Independent portfolio that was used for the xxxxx, and we believe that a larger portfolio that has more not actively distributed or promoted recordings have even larger payment lags. Without further data processing --- which can be a tedious task, as we usually have to deal with hundreds of millions of transactions stored in various royalty statement formats---, we cannot even correctly attribute the revenue to a financial year.
-
-## Estimation strategies
-
-Almost all recorded industry transactions have full transactional detail (use, licensing data, price), and to a lesser extent, live music performances have rich transactional data. In statistics, we call these information sources administrative records, which contain detailed information that was not designed for statistical purposes.
-
-To use such data, we have to overcome many data processing steps. We must bring them to the same timeframe, same functional currency, and remove personal or business identifiers.
 
 ### Timeframe of analysis
 
 Various licensed uses of music have three royalty payment cycles. Mechanical royalties are paid once in a lifetime. Public performance royalties are collected on an annual basis, and small earnings (that would be too costly to pay out during the year) are accumulated over two or more years. Streaming earnings are paid out monthly, but similarly to public performance royalties, small amounts are accumulated over two or more periods. Observing royalty statements alone cannot enable meaningful comparisons because the same payouts on a given date---for example, 30 April 2020---refer to different earning periods.
 
+
+Price comparison is challenging in the music sector because various forms of exploitation of the underlying copyright or neighbouring right (the "revenue streams") have different licensing and contracting models. The prices of mechanical reproduction, public performance and broadcasting/transmission are based on annual use and annual payments. Because some earned royalties are very small, royalty management organisations do not pay out but accumulate earnings where money transfer and accounting costs would be higher or would take most of the payout.
+
+<!--
+The streaming licenses, which usually make a form of a hybrid between a mechanical and public performance license, have a monthly payment schedule, but the revenues cannot be treated strictly monthly. The typical revenues do not meet the monthly minimal payout thresholds ---in fact, the typical (median) earning has been zero in the Consolidated Independent portfolio that was used for the xxxxx, and we believe that a larger portfolio that has more not actively distributed or promoted recordings have even larger payment lags. Without further data processing --- which can be a tedious task, as we usually have to deal with hundreds of millions of transactions stored in various royalty statement formats---, we cannot even correctly attribute the revenue to a financial year.
+
 As we have experienced during the creation of the CI-CEEMID indices, most recordings' typical (median) earnings over a single royalty payment cycle (a calendar month) are zero. Nevertheless, it is certainly not zero during the entire lifespan of the recording, and it is usually not zero for the first or second year. The choice of the timeframe for empirical observation is critical.
 
 Periodical earnings often do not reflect accrued but unpaid royalties, which may affect many rightsholders, given that the earnings in the long tail are smaller than the accounting and bank transfer cost. These accrued earnings are only sometimes lost and often carried over to the next period when the payment, after payment costs, is practical. It is very easy to significantly underestimate the payouts *in the long tail*, because their *payment frequency is lower than among successful artists*.
 
-The different timeframes of various royalty collections impact the analysis: different royalty cash flows are subject to different currency exchange rates. Two seemingly equal royalty payments may veil a different quantity or price by an offsetting currency movement.
+The different timeframes of various royalty collections impact the analysis: different royalty cash flows are subject to different currency exchange rates. Two seemingly equal royalty payments may veil a different quantity or price by an offsetting currency movement. --->
 
 ### Functional currency
 
-Music is a global industry; even less-known artists or songs occasionally find international audiences on streaming platforms. This means that practically every Slovak rightsholder has *some* revenues that are *not* originally denominated in euros. (In the UK, in an earlier analysis we had shown that the decline of the British pound's value has .... ) The volume, price, and exchange rate effects must be separated for any meaningful economic analysis.
+Music is a global industry; even less-known artists or songs occasionally find international audiences on streaming platforms. This means that practically every Slovak rightsholder has *some* revenues that are *not* originally denominated in euros. The volume, price, and exchange rate effects must be separated for any meaningful economic analysis.
 
-Revenues are multiples of use volumes over price expressed in a specific currency. They can be national or domestic market indicators Ideally, the data collection should record volumes (number of streams), prices (value of individual stream), and exchange rates (conversion rate applied for the particular stream) for all important markets of the artist, company or national organisation. Currency translations must be consistent with the timeframe and accurals policies.
+Revenues are multiples of use volumes over price expressed in a specific currency. They can be national or domestic market indicators Ideally, the data collection should record volumes (number of streams), prices (value of individual stream), and exchange rates (conversion rate applied for the particular stream) for all important markets of the artist, company or national organisation. Currency translations must be consistent with the timeframe and accruals policies.
 
 Without the ability to set up apart foreign versus national *or* domestic revenues, and break up the effect of changing volumes, prices and exchange rates, they are not suitable for economic analysis.
 
 
+<!--
+
+While self-reported surveys tend to be biased, they are consistently biased. They may overstate the actual hours of use but are not biased when expressed as the market share of radio transmission and licensed music streaming. --->
+
+## References
