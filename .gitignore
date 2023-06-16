@@ -2,6 +2,7 @@
 # For the creation of html versions:
 *comparators_files/^
 *music-market-comparators_files/^
+*not_included/^
 
 # History files
 .Rhistory
