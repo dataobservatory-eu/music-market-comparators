@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daniel Antal">
+
+<title>A Market Comparator Model for Valuing the Use of Music</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="comparators_files/libs/clipboard/clipboard.min.js"></script>
+<script src="comparators_files/libs/quarto-html/quarto.js"></script>
+<script src="comparators_files/libs/quarto-html/popper.min.js"></script>
+<script src="comparators_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="comparators_files/libs/quarto-html/anchor.min.js"></script>
+<link href="comparators_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="comparators_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="comparators_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="comparators_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="comparators_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#fair-value-and-equitable-remuneration" id="toc-fair-value-and-equitable-remuneration" class="nav-link" data-scroll-target="#fair-value-and-equitable-remuneration">Fair Value and Equitable Remuneration</a></li>
+  <li><a href="#most-applicable-method" id="toc-most-applicable-method" class="nav-link" data-scroll-target="#most-applicable-method">Most applicable method</a></li>
+  <li><a href="#comparing-licensing-models" id="toc-comparing-licensing-models" class="nav-link" data-scroll-target="#comparing-licensing-models">Comparing licensing models</a></li>
+  <li><a href="#illegal" id="toc-illegal" class="nav-link" data-scroll-target="#illegal">Private Copying and Illegal Activities</a></li>
+  <li><a href="#relevant-markets" id="toc-relevant-markets" class="nav-link" data-scroll-target="#relevant-markets">Relevant Markets</a></li>
+  </ul></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a></li>
+  <li><a href="#data-needs" id="toc-data-needs" class="nav-link" data-scroll-target="#data-needs">Data needs</a>
+  <ul class="collapse">
+  <li><a href="#estimating-volumes" id="toc-estimating-volumes" class="nav-link" data-scroll-target="#estimating-volumes">Volumes</a></li>
+  <li><a href="#estimating-prices" id="toc-estimating-prices" class="nav-link" data-scroll-target="#estimating-prices">Prices</a></li>
+  <li><a href="#estimation-strategies" id="toc-estimation-strategies" class="nav-link" data-scroll-target="#estimation-strategies">Estimation strategies</a>
+  <ul class="collapse">
+  <li><a href="#timeframe-of-analysis" id="toc-timeframe-of-analysis" class="nav-link" data-scroll-target="#timeframe-of-analysis">Timeframe of analysis</a></li>
+  <li><a href="#functional-currency" id="toc-functional-currency" class="nav-link" data-scroll-target="#functional-currency">Functional currency</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="comparators.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="comparators.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A Market Comparator Model for Valuing the Use of Music</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Antal </p>
+          </div>
+  </div>
+    
+  
+    
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/10.5281/zenodo.8046977">10.5281/zenodo.8046977</a>
+      </p>
+    </div>
+  </div>
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This technical report is a subtask of the <em>D1.1 Economy of music in Europe: Methods and indicators</em> of the Work Package 1 of <a href="https://openmuse.dataobservatory.eu/resources/report-european-music-economy/">Open Music Europe</a>.</p>
+<p>This methodological paper, and the entire report, is developed in accordance with the <a href="http://www.bitss.org/wp-content/uploads/2019/03/OPA-Guidelines.pdf">Open Policy Analysis Guidelines</a>, and it is available in <a href="https://github.com/dataobservatory-eu/music-market-comparators">an open repository</a> with standardised file structure and open components.</p>
+<blockquote class="blockquote">
+<p>From the Grant Agreement: &gt; A market comparator model for valuing public performance and free uses, such as representative music streams (based on CEEMID ‘full market model’ and a DCF model) is developed.</p>
+</blockquote>
+<p>Subjects: <a href="https://id.loc.gov/authorities/subjects/sh85141927.html">Music industry</a>; <a href="http://id.loc.gov/authorities/subjects/sh85141927">Valuation</a>; <a href="https://id.loc.gov/authorities/subjects/sh85032446.html">Copyright</a></p>
+</div>
+</div>
+<p>Both the publishing and recording side of the industry exploit intellectual property, i.e.&nbsp;author’s rights (copyrights) and neighbouring rights, and gives licenses for the use of the music. The publishing side also licenses live performances, even when the composer is present on the live performance stage. The exploitation is based on licensing agreements, which put a price tag on various uses. The revenue of the rightsholders is a quantity of the use multiplied by this price.</p>
+<p>In the music industry very few organisations have an opportunity to set prices. Because author’s rights and neighboring rights are legally created monopolies, the price setting is often regulated, and the provision of the license is compulsory. And because of the high fragmentation of the supply side of the music, most creators and enterprises are either price takers, or set prices collectively. Individual price settings, for example, licensing for exploitation on theatrical stages, is market niche that affects a minority of rightsholders and a small fraction of the total market revenues. Until the emergence of music streaming, the buyer side of the music industry was so much more concentrated than the seller side that, for practical reasons, music was sold in bundles. If an artist released a record and gave the mandate to license it to radio or television stations, it was impossible to revoke this license (it became part of a so-called ‘blanket license’).</p>
+<p>There are several licensing models present in the current music markets, which makes valuation and price comparison very challenging.</p>
+<p>Another complicating factor is the presence of various rights that are often licensed separately, but the legal use of the music requires the acquisition of all necessary licenses. A film producer may obtain a license from the publishing side of a song, but cannot use it without the individually priced master (recording) right.</p>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>The concepts of copyright law, such as equitable remuneration, set a legal basis for the remuneration of creators, particularly in cases where the seller has no freedom of contracting the actual user. Such rules, however, do not contain regulations on how to set the payable sum—this often leads to confusion. Copyright law creates valuable rights, but the value of these rights must be interpreted in the light of further legal principles and economic norms.</p>
+<p>In the European Union, copyrights are treated as constitutionally protected rights which are protected on an equal level with fair competition. The states created valuable rights for authors, producers and performers of music with conditions to exploit them fairly. In our understanding the valuation of music and setting its royalty prices should mainly follow the Fair Value standards, which inspired by the more general arm’s length principles.</p>
+<section id="fair-value-and-equitable-remuneration" class="level3">
+<h3 class="anchored" data-anchor-id="fair-value-and-equitable-remuneration">Fair Value and Equitable Remuneration</h3>
+<p>Copyrights and neighbouring rights are governed by international law, and in Europe, they are further harmonized by EU law. The valuation principles of intellectual property are set by various standards set by the World Intellectual Property Organization and the International Financal Reporting Standards Board. The IFRS standards are incorporated into EU accounting law, and the WIPO standards have a similar international law underpinning as the more specific copyright and neighbouring right. Even though every European Union member state has its own copyright and accounting laws, they are harmonised to the degree that we can create rather portable valuation models.</p>
+<p>Music’s valuation and price setting must comply with the broadest fair value principles (set by international financial reporting standards) in light of the intellectual property standards set by WIPO. Copyright and neighbouring rights law have special provisions, often called “equitable remuneration.” From an economic perspective, we treat equitable remuneration as a special case of fair valuation. Even when equitable remuneration is not applicable in the music industry, we believe the broader fair valuation principle should yield a similar result.</p>
+<p>Recently, equitable remuneration received a perhaps oversized attention due to the surrounding policy debates in the United Kingdom. Equitable remuneration is originally connected to a compulsory license that must be paid when recorded music is played in a publicly accessible location to the performing artists and music producers. Strictly speaking, equitable remuneration concerns only a relatively minor portion of the music ecosystem’s income. In our understanding, however, equitable remuneration is just a legal basis to a particular form of fair compensation—governed by the fair value and the arm’s length standard and competition law.</p>
+<p><em>Equitable remuneration</em> is a legal concept which has an economic aspect. In international law, it was first enshrined as Convention C100 of the ILO, stipulating that men and women should receive equal pay for equal work <span class="citation" data-cites="ilo_c100">(<a href="#ref-ilo_c100" role="doc-biblioref">ILO 1951</a>)</span>. Within the context of international copyright law, it was introduced as a modification of the Berne Convention by the Rome Convention for the remuneration of the broadcasting of recorded fixation of music works (recordings) since 1971<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Equitable remuneration is originally connected to a compulsory license that must be paid when recorded music is played in a publicly accessible location to the performing artists and music producers. In a compulsory licensing regime the rightsholders are not in a position to negotiate the royalty rates or deny use to any business entity<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. because it is not a negotiated market rate. The payable rate is called <em>equitable</em> (and, in some jurisdictions, <em>fair</em>) . The law stipulates in these cases the rate must be set <em>as if</em> they have negotiated in a market transaction of two willing parties without monopoly (supplier power) or monopsony (buyer power) In economic terms, these rates must be set on a <em>fair value</em> basis.</p>
+<p>The equitable remuneration standards in international treaties do not set a standard for calculating equitable remuneration. In an international context, a study of Europe Economics and IVIR has shown that there are notable differences in how <em>equitable remuneration</em> is understood—and it is often used as a synonym for <em>fair</em> remuneration <span class="citation" data-cites="ivir_remuneration_2015">(<a href="#ref-ivir_remuneration_2015" role="doc-biblioref">Europe Economics &amp; IVIR 2015</a>)</span>. Despite the national differences, it is a sufficiently harmonised system that allows the functioning of the global music industry without major barriers and therefore allows the comparison of revenues, prices and volumes, too.</p>
+<p>Equitable remuneration is not a valuation or pricing concept, but it is an important legal mechanism to ensure that copyright and neighbouring rightsholders are remunerated. In our understanding, equitable remuneration should happen at <em>fair value</em> as defined by economics and international accounting standards.</p>
+<p>When intellectual property is sold (against a lump-sum payment), licensed (for periodical payment), or used as a pledge against a loan, the transaction must comply with the <em>Fair Value</em> standard. This standard, similarly to copyright law, follows international law. While it is transposed into national law in somewhat different ways, it cannot be altered fundamentally. The Fair Value standard of the <em>International Financial Reporting Board</em> has been incorporated into national European laws via EU law (and it remained UK law after Brexit, too.)</p>
+<p>When intellectual property is sold (against a lump-sum payment), or licensed (for periodical payment), or used as a pledge against a loan, the transaction must comply with the <em>Fair Value</em> standard. This standard is, similarly to copyright law, set by international law, which generally can only in detail be modified by UK law. The Fair Value standard of the <em>International Financial Reporting Board</em> has been incorporated into UK law law via EU law and remained UK law after Brexit. Our understanding is that music prices should mainly follow the Fair Value standards, but they are also inspired by the more general <em>arm’s length</em> principles: whenever a market transaction is not possible, the compulsory conditions should resemble of something that two market powers without power or proximity of interests (<em>at arm’s length</em>) would agree to pay.</p>
+<p>In 2008, the global recording industry body, IFPI, published <em>Valuing the use of recorded music</em>, created by PriceWaterhouseCooper <span class="citation" data-cites="pwc_valuing_2008">(<a href="#ref-pwc_valuing_2008" role="doc-biblioref">PwC 2008</a>)</span>. This excellent methodological guide applies the WIPO and IFRS standards <span class="citation" data-cites="ifrs_fair_value_2011 flignor_orozco_ip_valuation_2006 puca_intangible_2019">(<a href="#ref-ifrs_fair_value_2011" role="doc-biblioref">IFRS 2011</a>; <a href="#ref-flignor_orozco_ip_valuation_2006" role="doc-biblioref">Flignor and Orozco 2006</a>; <a href="#ref-puca_intangible_2019" role="doc-biblioref">Puca and Zyla 2019</a>)</span> on valuing copyrights in more practical terms for the music industry. The valuation principles are enshrined in the fair valuation principles of the WIPO and the fair value principles of the International Financial Standards Board—their use is not a recommendation but a statutory obligation in most IFRS countries.</p>
+</section>
+<section id="most-applicable-method" class="level3">
+<h3 class="anchored" data-anchor-id="most-applicable-method">Most applicable method</h3>
+<p>The recognised fair valuation principles stipulated that the “most applicable method” must be used in valuations, which almost always leaves out in copyright valuations the (historical) “cost approach” and leaves open the use of the “income approach” and the “market approach”. The cost- and income approach are fundamental valuation techniques, and could be used to fully reset valuations or prices.</p>
+<p>The <em>cost approach</em> is almost always inapplicable, because the rightsholders are natural person who do not account for their working time, i.e., the time when they are composing music. There are no appropriate business records of these creative activities.</p>
+<p>The <em>income approach</em> compares the royalty flows of a work of its recording by using an appropriate “discount rate.” When a user buys in a music store an mp3 file on 1 July 2015, it triggers a single royalty payment after the deductions of the cost of sale on the marketplace. In a streaming platform, the same user’s royalty payments appear monthly when she listens to the song and on the radio, usually every year. The discount rate provides a proper comparison between remuneration received in July 2015 and April 2021.</p>
+<p>The use of the income approach is unpractical in many cases when we have irregular or annual payments. With annual payments, the valuation’s timeframe would be too long. Calculating an appropriate discounting rate would be also pratically impossible for many uses.</p>
+<p>The <em>market approach</em> tries to identify a payment rate, regardless of if it is made in lump sum, monthly or annually to established, on the basis of sufficiently similar uses. Many ideas were tried internationally to identify the sufficiently similar use of music streaming; for example, relating ad-supported and automatically selected songs to radio streams, and relating cases where the user controls the selection of songs, and may even download them to music downloads. We will use the market appraoach for practical uses, although the market approach, unlike the cost or income approaches, is not a fundamental valuation method. In other words, we can use the market approach only if we accept that at least many prices are correct on the market, and only some of them can be questioned.</p>
+<p>The application of <em>fair valuation principles</em> is particularly challenging in the case of private copying, where the transactions are not recorded (as they are not market transactions) and in streaming, which is a relatively new technology that is seen in licensing as a mixture of earlier mechanical copy-based and public performance-based licensing, and has so many transactions that most rightsholders (and even their national organisations) like the data processing capacity to administer the rights or challenge incorrect payments.</p>
+</section>
+<section id="comparing-licensing-models" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-licensing-models">Comparing licensing models</h3>
+<p>If we use the <em>market approach</em> for valuations, we must consider the differences in the way music is licensed and royalties are paid for.</p>
+<ul>
+<li><p>The <strong>public performance model</strong> has various pricing standards for <em>live music</em>, <em>publishing</em> and the <em>recording</em> side. For radio broadcasting, transmission, and background music, it uses annual blanket licensing. When analysing public performance uses and payments, we must be careful with the timeframe of the analysis. Public performance revenues are usually accrued throughout the year and paid once, but there may be different accrual and payment periods present in a market.</p></li>
+<li><p>The <strong>mechanical licensing model</strong> is used for physical products, legalized digital downloads, and home copying and has lump sum values, paid upfront and for perpetuity. In the case of home copying levies/compensation, the sum is not expressed per unit, but in annual lump sums, which are historically connected to the mechanical pricing model. (See <em>Private Copying in Croatia</em> where we explain in detail this analogy <span class="citation" data-cites="antal_pcr_croatia_2019">(<a href="#ref-antal_pcr_croatia_2019" role="doc-biblioref">Antal 2019a</a>)</span>). The mechanical licensing model is well harmonised globally via BIEM, is the international organisation representing mechanical rights societies.</p></li>
+<li><p>The streaming model is <em>de facto</em> harmonised by the fact that the major players in the world are the same, and they are using similar model contracts. Legally speaking, the solutions differ among the UK, U.S., and EU solutions, but the streaming model is always a hybrid of the mechanical licensing and the public performance models. A streaming provider needs to have a license from both the publishing side (that is present in mechanical licensing) and all interested parties that are present in public performance licensing. In streaming, the default accrual and payment period is the month.</p></li>
+</ul>
+<p>These licensing models are are very well harmonised internationally. Our model could be easily transposed to any EU member state or the United Kingdom, and even to the U.S., if we consider the problem of radio transmission licensing in that jurisdiction. It is important to notice that while the same principles can be applied in many jurisdictions, the actual value of the rights will differ in each country because of different market and regulatory conditions.</p>
+<p>We translated the revenues from these income streams, excluding the background music sold to business-to-business uses in the hotel, restaurant, and catering sectors, into notional hourly royalty figures.</p>
+<p><em>In the case of live performances, we took the notional concert visits of each country as a 90-minute performance to compare variously priced live performance revenues with a similar currency unit / per hour format. Live music only uses the public performance model</em>, and it plays a relatively minor role in the live music ecosystem. Our model focuses on the recording and publishing side of the music business—they have two mature business models that are highly comparable internationally or in long-term longitudinal analysis. Both the mechanical licensing model and the public performance model are based on the same international regulation (harmonised on the level of international law) and follow the same business (licensing) model. In most cases, the actual licenses are territorial, and the prices and exact licensing terms are specific to the country. But these aspects of our <em>full market comparator model</em> are very easy to replicate for any year and licensing territory (national jurisdiction.)</p>
+<p>The regulation of free uses, particularly the home copying exception and its remuneration, is different in each country which has this exception at all—-but private copying levies, when applicable, do follow an adopted form of mechanical licensing. The compensation is annualised, like in public performance, and the rates (prices) are somehow related to the mechanical royalty rates.</p>
+<p>The UUC model (mainly applied by YouTube), as recognised by the scoping report, is very different.</p>
+</section>
+<section id="illegal" class="level3">
+<h3 class="anchored" data-anchor-id="illegal">Private Copying and Illegal Activities</h3>
+<p>In this report, we do not distinguish among various unlicensed music uses. There are unlicensed uses that do not fall under the private copying exception and, therefore, they could be persecuted by the Slovak state, for example. The rightsholders could claim damages from users on a different legal basis.</p>
+<p>However, this distinction is rarely made in copyright administration and enforcement because understanding the legal and technical nuances of the excepted and illegal use requires both copyright law and technical knowledge. Slovak authorities hardly use these distinctions: non-exempt private users are hardly ever persecuted, and damages are rarely paid for rightsholders on a different legal basis. The distinction would be even more difficult for ordinary citizens, who are randomly invited to the survey interviews. Some illegal uses of music are also criminal activities, and it would be unethical and produce unreliable results if we would ask people about criminal activities that would incriminate them.</p>
+<p>Therefore, whenever they claimed that they copied unpaid music, films, series episodes, television programs, or audiobooks on their devices, we used the term “unlicensed use”, and we assumed that these cases should be compensated under the private copying regime. Of course, the rightsholders and the competent authorities of Slovakia may decide to choose a more nuanced approach and litigate cases that may not fall under the private copying exception on a different legal basis.</p>
+</section>
+<section id="relevant-markets" class="level3">
+<h3 class="anchored" data-anchor-id="relevant-markets">Relevant Markets</h3>
+<p>When economists talk about markets, they do not necessarily talk about a piece of land in Camden Town where people can buy used records from stalls after a bit of haggling. They are using this “marketplace” as a metaphor. The “relevant market” is a metaphoric place that works as if sellers and buyers could potentially meet and agree on transactions. It assumes people are trading securities from their home computers worldwide and a server clears the transaction which is physically located in Northern Sweden to keep the processors cool but under the trading license of a firm based in the City of London.</p>
+<p>Any market analysis, or applied analysis aiming to predict revenues or set prices must start with a market definition. In our case, we are talking about the market of “music”, which is the product or service dimension of the relevant market. A relevant geographic market comprises the area in which the firms concerned are involved in the supply of products or services and in which the conditions of competition are sufficiently homogeneous. Because recorded music creates royalties from copyrights and neighbouring rights defined by national copyright law, and, with some exceptions (for example, the BIEM agreements), are set nationally, the relevant market for analysis is the national market.</p>
+<p>In our analysis, we will work with national markets as they are defined by country borders and jurisdictions of a state. Theoretically, this is a straightforward choice. In terms of data availability, it will pose practical problems, because streaming royalties, mechanical royalties for digital downloads, and film synchronisation reveneus are usually collected from many jurisdictions, and local reporting (observational) units often do not separate well revenues from different market segments.</p>
+</section>
+</section>
+<section id="model" class="level2">
+<h2 class="anchored" data-anchor-id="model">Model</h2>
+<p>The CEEMID full-market model (introduced in <a href="#music-use">Music Use and Rightsholder Damages</a> and <a href="#av-use">Enjoyment of Audiovisual Content and Rightsholder Damages</a>) was partly based on <em>Valuing the use of recorded music</em>, an excellent methodological guide created by PriceWaterhouseCoopers for IFPI <span class="citation" data-cites="pwc_valuing_2008">(<a href="#ref-pwc_valuing_2008" role="doc-biblioref">PwC 2008</a>)</span>. In our understanding, similar valuations presented here in this short example must meet high statistical standards <span class="citation" data-cites="frank_guy_essnet-culture_2012">(<a href="#ref-frank_guy_essnet-culture_2012" role="doc-biblioref">Bína, Vladimir et al. 2012</a>)</span> and IFRS Fair Value standards <span class="citation" data-cites="ifrs_fair_value_2011 commission_regulation_2012_1255">(<a href="#ref-ifrs_fair_value_2011" role="doc-biblioref">IFRS 2011</a>; <a href="#ref-commission_regulation_2012_1255" role="doc-biblioref">EUR-Lex 2012</a>)</span>, which had been adopted into EU law.</p>
+<p><img src="plots/full_market_example.jpg" class="img-fluid"></p>
+<p>This was the framework that CEEMID, a cooperation of several European rightsholders, including Artisjus and SOZA, started to develop when they started to cooperate on meeting the data requirements of these valuation techniques. It was used for royalty pricing and compensation claims in Hungary <span class="citation" data-cites="antal_szabad_2017_en antal_szabad_2018_en">(<a href="#ref-antal_szabad_2017_en" role="doc-biblioref">Antal 2017a</a>, <a href="#ref-antal_szabad_2018_en" role="doc-biblioref">2018</a>)</span>, Slovakia <span class="citation" data-cites="antal_slovenskom_hudobnom_2019_en">(<a href="#ref-antal_slovenskom_hudobnom_2019_en" role="doc-biblioref">Antal 2019b</a>)</span> and Croatia <span class="citation" data-cites="antal_pcr_croatia_2019">(<a href="#ref-antal_pcr_croatia_2019" role="doc-biblioref">Antal 2019a</a>)</span> are comparing per-hour royalty revenues in various licensing and compensation models, therefore providing a common metric for mechanical, public performance, streaming and private copying compensation revenues.</p>
+<p>This model is based on a competition policy-based argument. Radio stations, television, YouTube and streaming platforms are all competing for consumers’ attention, and they are competing with each other. At any minute, when a user is listening to music or a podcast in a car, she is not listening to the radio; when he is watching YouTube, he is not watching television. And, of course, when a vinyl record is played on a turntable at home, the digital radio is not playing.</p>
+<p>Our full market comparator model takes further the market comparator model of PWC published by IFPI, connecting to the entire US and European music value chain models. These value chain models traditionally divide the music industry into three revenue streams: <em>live music</em>, <em>publishing</em> and <em>recording</em> side. We incorporated all three-revenue streams’ licensing income into the model.</p>
+<p>Price observation (estimation) and comparison are challenging. Traditionally, public performance licenses are blanket licenses that cover any use for a set period (usually a year), but these blanket revenues are distributed by the collective management organisations by radio transaction logs or samples of such logs. So, the payment is not directly connected to a single use, and much data would be required to calculate the implied price per use. Our approach is to calculate an implied hourly price per user.</p>
+<p>In the streaming platforms, the end users pay a lump sum subscription fee, and their use, either using the pro-rata or a user-centric algorithm. To make a comparison possible, we have translated the streaming revenues, like other revenues, to hourly figures, even though we could calculate implied per-use prices.</p>
+<p>Mechanical royalties are lump sum payments because the licensing fee is payable for one mechanical copy/download of the song (often priced differently in bundles, i.e.&nbsp;“albums”.) Unlike streaming prices, this price is not for a single use but for any number of uses during the useful life of the copy. Unlike public performance licenses, the royalty payment is not related to a time period—–again, the lump sum payment is made for the entire useful life of a copy. One possible approach to express the cash flows of the lump payment as a perpetual annuity’s annual cash flow. In a simpler model, if we assume that the useful life and the renewal of music collections are stable, we may assume that the annual mechanical licenses are paid for the part of the collection that is replaces the old elements in a record collection that reached their useful life.</p>
+<p>Translating various prices to GBP/listening hour or HUF/listening hour requires much estimation work. To systematically use listening hours, we used the standardised CAP surveys (see <span class="citation" data-cites="ref">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span>(estimating-volumes).) Most public performance revenues were available in annualised, national aggregates; in this case, we could easily compare the self-reported use hours with annualised revenues for the entire user population.</p>
+<p>As our experience showed in Hungary, Slovakia, and Croatia, even though in these use cases, there are legal mechanisms that should allow the prices to converge to each other — after all, our model is a price-setting model for royalties originally—the prices can greatly deviate. Some countries have not adjusted their home copying compensation for a long time, or there is some local regulatory interference (like in the U.S.) with radio licensing. But at least on the level of the international legal norms and the model contracts, we can expect some sort of convergence that allows using the prices of any other use as a comparator for any analysed use.</p>
+<p>In an EU jurisdiction, before the implementation of the DSM Directive, we can objectively exclude the UUC model from this comparison, as there is no similar licensing model that would allow price convergence.</p>
+<p>Our solution in the Hungarian and Slovak models was to report figures with and without the inclusion of UUC, which was dominated by the use of YouTube. As a base case, we excluded UUC uses from the market comparators as there was no sufficient price harmonisation and a sufficiently similar contracting practice or legal basis for the revenues.</p>
+</section>
+<section id="data-needs" class="level1">
+<h1>Data needs</h1>
+<p>The highly globalised music industry generates two important international reports: the <em>Global Collection Reports</em> of CISAC, which contains total revenues from collectively managed author’s revenues, and IFPI’s <em>Global Music Report</em> of the IFPI, which reports the recording (producer) side of the industry, which covers total revenues in almost all territories for producers and partly performers. These reports were designed to set business targets for larger organisations, and they do not contain price or volume data, only revenue data, which allows minimal economic analysis. The more fragmented live music industry has no comprehensive global or European report. We also do not have a truly comprehensive report on global publisher revenues that are not collectively managed. These reports are not suitable for an economic market analysis because they do not contain prices and quantities, only aggregated revenues. There are many national market studies available, but only a few of them try to quote volume or use data and price data. CISAC and IFPI are global organisations, and their reports are based on an internal survey of their members. Most industry reports are member self-reported studies.</p>
+<p>Both organisations collect (rather different) international data, which is only available to their members. Because CISAC had been earlier accused of price fixing and made an agreement with the European Commission, the organisation is particularly careful about even recording price data. IFPI has more comprehensive economic analysis; in 2008, it even published a very useful pricing guide <span class="citation" data-cites="pwc_valuing_2008">(<a href="#ref-pwc_valuing_2008" role="doc-biblioref">PwC 2008</a>)</span>. National music industry reports are also available with variable depth of content and analysis, like the UK Music in Numbers series. These reports contain limited information for a thorough economic analysis or valuation, partly because the conflicts of interests within the national music industries, for example, among publishers and producers and producers and performers, do not allow the systematic collection and dissemination of such information.</p>
+<p>Our Open Music Europe project grew out of the the Central &amp; Eastern European Music Industry Databases (CEEMID) initiative in 2014 <span class="citation" data-cites="artisjus_measuring_2014">(<a href="#ref-artisjus_measuring_2014" role="doc-biblioref">Artisjus et al. 2014</a>)</span>, in which rightsholders from three countries attempted to solve these data problem, and bring seemingly data poor Central European countries to a level of data availability that allows better price setting or the creation of better creative industry policies or business strategies.</p>
+<p>Music organisations usually do not possess the information that would be desirable for analysing the market from an economic point of view. Surveying rightsholders and users are very difficult, though, because neither rightsholders nor works or recordings have an authoritative description of their population. Only very advanced inverse sampling techniques (which require vast amounts of data) can reveal price and volume movements when the analyst cannot access full transactional logs.</p>
+<p>Our Open Music Europe project grew out of the the Central &amp; Eastern European Music Industry Databases (CEEMID) initiative in 2014 <span class="citation" data-cites="artisjus_measuring_2014">(<a href="#ref-artisjus_measuring_2014" role="doc-biblioref">Artisjus et al. 2014</a>)</span>, in which rightsholders from three countries attempted to solve these data problem, and bring seemingly data poor Central European countries to a level of data availability that allows better price setting or the creation of better creative industry policies or business strategies. The Hungarian, Slovak, and Croatian reports were based on statistical data created by the administrative records of the local collective management agencies, local market research, international data sources, and independent surveys. They showed that many of the data gaps identified by the <em>Feasibility Study for the establishment of a European music observatory</em> can be filled, but with data collection and processing needs that most national organisations alone do not possess <span class="citation" data-cites="antal_proart_2015 antal_growth_2017 antal_slovenskom_hudobnom_2019 antal_pcr_croatia_2019">(<a href="#ref-antal_proart_2015" role="doc-biblioref">Antal 2015</a>, <a href="#ref-antal_growth_2017" role="doc-biblioref">2017b</a>, <a href="#ref-antal_slovenskom_hudobnom_2019" role="doc-biblioref">2019c</a>, <a href="#ref-antal_pcr_croatia_2019" role="doc-biblioref">2019a</a>)</span>, and eventually we realised that data problems of more advanced, Western markets and of those future markets like Armenia’ showed very similar data/estimation problems.</p>
+<section id="estimating-volumes" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-volumes">Volumes</h3>
+<p>The most notable problem for any economic analysis of the music sector is the lack of volume information for the most important uses: broadcasting and retransmission, and various forms of licensed and UUC streaming (mainly YouTube.) The public music industry sources do not contain the number of exploitations (uses), the hours of exploitation (uses), or even the number of users.</p>
+<p>Detailed volume data usually exists, though it is only sometimes available from the administrative records of a central source, which is not designed for statistical purposes and often hard to access. Live music is collectively the most significant part of the music industry, but it needs to be more cohesive, and except for a few small and developed national markets, there are no real central ticketing services and central points of ticketing information. However, because live performances, in most cases, exploit the music creator’s copyright (except for early and classical music and authentic folk music that is not, or no longer subject to copyright protection), music performances are licensed by collective management organisations. There is always a certain level of latency — some shows go unreported —, but such agencies usually have detailed volume information (number of events, their audience volumes, ticket prices or revenues, and even the actual works used for royalty payment.)</p>
+<p>Similarly, the use of recorded music in most cases has full transactional data. Streaming providers pay for every single use, and mechanical licensing is based on the mechanical copies made (in the form of vinyl records, CDs, or downloadable files.) In some countries, broadcasting and re-transmission have a complete transactional log; in other cases, it has large use samples.</p>
+<p>The Digital Music Observatory has been following the methodological guidelines of the former <em>ESSNet-Culture</em> statistical working group. These methods were synthesised from the best practices found by ESSNet-Culture, a working group set up by Eurostat and 15 member states’ national statistical offices to measure cultural and creative industries. The ESSNet-Culture working group recommends measuring cultural access and participation (including market- and non-market forms) based on the ICET model <span class="citation" data-cites="frank_guy_essnet-culture_2012">(<a href="#ref-frank_guy_essnet-culture_2012" role="doc-biblioref">Bína, Vladimir et al. 2012</a>, pp 237-239)</span>.</p>
+<ul>
+<li><strong>I</strong>nformation: to seek, collect and spread information on culture;</li>
+<li><strong>C</strong>ommunication and community: to interact with others on cultural issues and to participate in cultural networks;</li>
+<li><strong>E</strong>njoyment and expression: to enjoy exhibitions, art performances and other forms of cultural expression, to practice the arts for leisure, and to create online content;</li>
+<li><strong>T</strong>ransaction: to buy art and to buy or reserve tickets for shows.</li>
+</ul>
+<p>The ICET model is based on a long history of quantitative sociology and media research with almost 50 years of research history. It is a well-established methodology. For more details, we conducted cultural access and participation surveys with it see <span class="citation" data-cites="de_haan_virtuele_2008 de_haan_nowadays_2012">(<a href="#ref-de_haan_virtuele_2008" role="doc-biblioref">Haan and Adolfsen 2008</a>; <a href="#ref-de_haan_nowadays_2012" role="doc-biblioref">Haan and Broek 2012</a>)</span>.</p>
+<p>Following the ICET model, we created surveys that measured the missing variables in a way that could be related to transactions. (The ICET abbreviation stands for information, communication, enjoyment, and transactions.)</p>
+<p>Rightsholders often have full or near-full transaction details for market-based cultural activities, such as sales of books or concert tickets. However, private copying is not a market-based activity, and no sales logs are present. The problem with these data sources is that they are business confidential and fragmented and lack a common collection methodology. It is possible to integrate this data, but often it is more useful to collect more aggregated forms of data.</p>
+<p>To arrive at a common denominator of users and uses, we calculated notional hours of music enjoyment in the form of attending concerts, listening to radio or streaming services, or the respondent’s record collection. While self-reported surveys tend to be biased, they are consistently biased. They may overstate the actual hours of use but are not biased when expressed as the market share of radio transmission and licensed music streaming.</p>
+</section>
+<section id="estimating-prices" class="level3">
+<h3 class="anchored" data-anchor-id="estimating-prices">Prices</h3>
+<p>The price information is always missing from the public music industry reports, and critically, in the absence of volume data, even price averages cannot be calculated from total revenues. Of course, the average price would be only a starting point in cases where the prices are not uniform. As we will show, the prices are very stable in some forms, such as mechanical licensing (international agreements set them), somewhat variable in broadcasting and retransmission (they change annually), and fluctuating monthly in streaming.</p>
+<p>Price comparison is challenging in the music sector because various forms of exploitation of the underlying copyright or neighbouring right (the “revenue streams”) have different licensing and contracting models. The prices of mechanical reproduction, public performance and broadcasting/transmission are based on annual use and annual payments. Because some earned royalties are very small, royalty management organisations do not pay out but accumulate earnings where money transfer and accounting costs would be higher or would take most of the payout.</p>
+<p>The streaming licenses, which usually make a form of a hybrid between a mechanical and public performance license, have a monthly payment schedule, but the revenues cannot be treated strictly monthly. The typical revenues do not meet the monthly minimal payout thresholds —in fact, the typical (median) earning has been zero in the Consolidated Independent portfolio that was used for the xxxxx, and we believe that a larger portfolio that has more not actively distributed or promoted recordings have even larger payment lags. Without further data processing — which can be a tedious task, as we usually have to deal with hundreds of millions of transactions stored in various royalty statement formats—, we cannot even correctly attribute the revenue to a financial year.</p>
+</section>
+<section id="estimation-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="estimation-strategies">Estimation strategies</h2>
+<p>Almost all recorded industry transactions have full transactional detail (use, licensing data, price), and to a lesser extent, live music performances have rich transactional data. In statistics, we call these information sources administrative records, which contain detailed information that was not designed for statistical purposes.</p>
+<p>To use such data, we have to overcome many data processing steps. We must bring them to the same timeframe, same functional currency, and remove personal or business identifiers.</p>
+<section id="timeframe-of-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="timeframe-of-analysis">Timeframe of analysis</h3>
+<p>Various licensed uses of music have three royalty payment cycles. Mechanical royalties are paid once in a lifetime. Public performance royalties are collected on an annual basis, and small earnings (that would be too costly to pay out during the year) are accumulated over two or more years. Streaming earnings are paid out monthly, but similarly to public performance royalties, small amounts are accumulated over two or more periods. Observing royalty statements alone cannot enable meaningful comparisons because the same payouts on a given date—for example, 30 April 2020—refer to different earning periods.</p>
+<p>As we have experienced during the creation of the CI-CEEMID indices, most recordings’ typical (median) earnings over a single royalty payment cycle (a calendar month) are zero. Nevertheless, it is certainly not zero during the entire lifespan of the recording, and it is usually not zero for the first or second year. The choice of the timeframe for empirical observation is critical.</p>
+<p>Periodical earnings often do not reflect accrued but unpaid royalties, which may affect many rightsholders, given that the earnings in the long tail are smaller than the accounting and bank transfer cost. These accrued earnings are only sometimes lost and often carried over to the next period when the payment, after payment costs, is practical. It is very easy to significantly underestimate the payouts <em>in the long tail</em>, because their <em>payment frequency is lower than among successful artists</em>.</p>
+<p>The different timeframes of various royalty collections impact the analysis: different royalty cash flows are subject to different currency exchange rates. Two seemingly equal royalty payments may veil a different quantity or price by an offsetting currency movement.</p>
+</section>
+<section id="functional-currency" class="level3">
+<h3 class="anchored" data-anchor-id="functional-currency">Functional currency</h3>
+<p>Music is a global industry; even less-known artists or songs occasionally find international audiences on streaming platforms. This means that practically every Slovak rightsholder has <em>some</em> revenues that are <em>not</em> originally denominated in euros. (In the UK, in an earlier analysis we had shown that the decline of the British pound’s value has …. ) The volume, price, and exchange rate effects must be separated for any meaningful economic analysis.</p>
+<p>Revenues are multiples of use volumes over price expressed in a specific currency. They can be national or domestic market indicators Ideally, the data collection should record volumes (number of streams), prices (value of individual stream), and exchange rates (conversion rate applied for the particular stream) for all important markets of the artist, company or national organisation. Currency translations must be consistent with the timeframe and accurals policies.</p>
+<p>Without the ability to set up apart foreign versus national <em>or</em> domestic revenues, and break up the effect of changing volumes, prices and exchange rates, they are not suitable for economic analysis.</p>
+
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-antal_proart_2015" class="csl-entry" role="listitem">
+Antal, Daniel. 2015. <span>“A <span>Proart</span> <span class="nocase">zeneipari jelentése.</span> [<span>The</span> <span>Music</span> <span>Industry</span> <span>Report</span> of <span>Proart</span>].”</span> ProArt Szövetség a Szerzői Jogokért Egyesület. <a href="http://zeneipar.info/letoltes/proart-zeneipari-jelentes-2015.pdf">http://zeneipar.info/letoltes/proart-zeneipari-jelentes-2015.pdf</a>.
+</div>
+<div id="ref-antal_szabad_2017_en" class="csl-entry" role="listitem">
+———. 2017a. <span>“The Competition of Unlicensed, Licensed and Illegal Uses on the Markets of Music and Audiovisual Works [<span class="nocase">A szabad felhasználások, a jogosított tartalmak és az illegális felhasználások versenye a zenék és audiovizuális alkotások hazai piacán</span>].”</span> <span>Artisjus - not public</span>.
+</div>
+<div id="ref-antal_growth_2017" class="csl-entry" role="listitem">
+———. 2017b. <span>“The <span>Growth</span> of the <span>Hungarian</span> <span>Popular</span> <span>Music</span> <span>Repertoire</span>: <span>Who</span> <span>Creates</span> <span>It</span> <span>And</span> <span>How</span> <span>Does</span> <span>It</span> <span>Find</span> <span>An</span> <span>Audience</span>.”</span> In <em>Made in <span>Hungary</span></em>, 1st ed. Studies in <span>Popular</span> <span>Music</span>. New York, NY: USA: Routledge.
+</div>
+<div id="ref-antal_szabad_2018_en" class="csl-entry" role="listitem">
+———. 2018. <span>“The Competition of Unlicensed, Licensed and Illegal Uses on the Markets of Music and Audiovisual Works [<span class="nocase">A szabad felhasználások, a jogosított tartalmak és az illegális felhasználások versenye a zenék és audiovizuális alkotások hazai piacán</span>].”</span> <span>Artisjus - not public</span>.
+</div>
+<div id="ref-antal_pcr_croatia_2019" class="csl-entry" role="listitem">
+———. 2019a. <span>“Private <span>Copying</span> <span class="nocase">in</span> <span>Croatia</span>.”</span> <a href="https://www.zamp.hr/uploads/documents/Studija_privatno_kopiranje_u_Hrvatskoj_DA_CEEMID.pdf">https://www.zamp.hr/uploads/documents/Studija_privatno_kopiranje_u_Hrvatskoj_DA_CEEMID.pdf</a>.
+</div>
+<div id="ref-antal_slovenskom_hudobnom_2019_en" class="csl-entry" role="listitem">
+———. 2019b. <span>“<span>Slovak Music Industry Report</span> [<span>Správa</span> <span class="nocase">o slovenskom hudobnom priemysle</span>].”</span> <a href="https://doi.org/10.17605/OSF.IO/V3BE9">https://doi.org/10.17605/OSF.IO/V3BE9</a>.
+</div>
+<div id="ref-antal_slovenskom_hudobnom_2019" class="csl-entry" role="listitem">
+———. 2019c. <span>“<span>Správa</span> <span class="nocase">o slovenskom hudobnom priemysle</span>.”</span> <a href="https://doi.org/10.17605/OSF.IO/V3BE9">https://doi.org/10.17605/OSF.IO/V3BE9</a>.
+</div>
+<div id="ref-artisjus_measuring_2014" class="csl-entry" role="listitem">
+Artisjus, HDS, SOZA, and Candole Partners. 2014. <span>“Measuring and <span>Reporting</span> <span>Regional</span> <span>Economic</span> <span>Value</span> <span>Added</span>, <span>National</span> <span>Income</span> and <span>Employment</span> by the <span>Music</span> <span>Industry</span> in a <span>Creative</span> <span>Industries</span> <span>Perspective</span>. <span>Memorandum</span> of <span>Understanding</span> to <span>Create</span> a <span>Regional</span> <span>Music</span> <span>Database</span> to <span>Support</span> <span>Professional</span> <span>National</span> <span>Reporting</span>, <span>Economic</span> <span>Valuation</span> and a <span>Regional</span> <span>Music</span> <span>Study</span>.”</span>
+</div>
+<div id="ref-frank_guy_essnet-culture_2012" class="csl-entry" role="listitem">
+Bína, Vladimir, Chantepie, Philippe, Deboin, Valérie, Kommel, Kutt, Kotynek, Josef, and Robin, Philippe. 2012. <span>“<span>ESSnet</span>-<span>CULTURE</span>, European Statistical System Network on Culture. Final Report.”</span> Edited by Frank, Guy. <a href="https://ec.europa.eu/assets/eac/culture/library/reports/ess-net-report_en.pdf">https://ec.europa.eu/assets/eac/culture/library/reports/ess-net-report_en.pdf</a>.
+</div>
+<div id="ref-commission_regulation_2012_1255" class="csl-entry" role="listitem">
+EUR-Lex. 2012. <span>“<span class="nocase">Commission Regulation (EC) No 1126/2008 of 3 November 2008 adopting certain international accounting standards in accordance with Regulation (EC) No 1606/2002 of the European Parliament and of the Council (Text with EEA relevance)</span>.”</span> <span>Official Journal of the European Union</span>. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R1255&amp;from=EN">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R1255&amp;from=EN</a>.
+</div>
+<div id="ref-ivir_remuneration_2015" class="csl-entry" role="listitem">
+Europe Economics &amp; IVIR. 2015. <span>“Remuneration of Authors and Performers for the Use of Their Works and the Fixations of Their Performances.”</span> European Commission, Directorate-General of Communications Networks, Content &amp; Technology. <a href="https://www.ivir.nl/publicaties/download/1593.pdf">https://www.ivir.nl/publicaties/download/1593.pdf</a>.
+</div>
+<div id="ref-flignor_orozco_ip_valuation_2006" class="csl-entry" role="listitem">
+Flignor, Paul, and David Orozco. 2006. <span>“Intangible Asset &amp; Intellectual Property Valuation: A Multidisciplinary Perspective.”</span> <a href="https://www.wipo.int/export/sites/www/sme/en/documents/pdf/ip_valuation.pdf">https://www.wipo.int/export/sites/www/sme/en/documents/pdf/ip_valuation.pdf</a>.
+</div>
+<div id="ref-de_haan_virtuele_2008" class="csl-entry" role="listitem">
+Haan, Jos de, and Anna Adolfsen. 2008. <em>De Virtuele Cultuurbezoeker - <span>Publieke</span> Belangstelling Voor Cultuurwebsites</em>. <span>SCP</span>-<span>Publicatie</span> 2008/9. Den Haag, the Netherlands: Sociaal en Cultureel Planbureau. <a href="https://archief18.archiefweb.eu/archives/archiefweb/20200311100055/https://www.scp.nl/dsresource?objectid=5c6903f1-e6ae-4e62-9a9b-6d5e1529756a&amp;type=org">https://archief18.archiefweb.eu/archives/archiefweb/20200311100055/https://www.scp.nl/dsresource?objectid=5c6903f1-e6ae-4e62-9a9b-6d5e1529756a&amp;type=org</a>.
+</div>
+<div id="ref-de_haan_nowadays_2012" class="csl-entry" role="listitem">
+Haan, Jos de, and Andries van den Broek. 2012. <span>“Nowadays Cultural Participation - an Update of What to Look for and Where to Look for It.”</span> In <em><span>ESSnet</span>-<span>CULTURE</span>, European Statistical System Network on Culture. Final Report.</em>, 397–417. Luxembourg. <a href="https://ec.europa.eu/assets/eac/culture/library/reports/ess-net-report_en.pdf">https://ec.europa.eu/assets/eac/culture/library/reports/ess-net-report_en.pdf</a>.
+</div>
+<div id="ref-ifrs_fair_value_2011" class="csl-entry" role="listitem">
+IFRS. 2011. <span>“<span>IFRS 13 Fair Value Measurement</span>.”</span> <span>International Financial Reporting Standards Foundation</span>. <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-13-fair-value-measurement/">https://www.ifrs.org/issued-standards/list-of-standards/ifrs-13-fair-value-measurement/</a>.
+</div>
+<div id="ref-ilo_c100" class="csl-entry" role="listitem">
+ILO. 1951. <span>“<span>C100 - Equal Remuneration Convention, 1951 (No. 100)</span>.”</span> <span>International Labour Organization</span>. <a href="https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C100/">https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C100/</a>.
+</div>
+<div id="ref-puca_intangible_2019" class="csl-entry" role="listitem">
+Puca, Antonella, and Mark L. Zyla. 2019. <span>“The Intangible Valuation Renaissance: Five Methods. Enterprising Investor.”</span> January 11, 2019. <a href="https://blogs.cfainstitute.org/investor/2019/01/11/a-renaissance-in-intangible-valuation-five-methods/">https://blogs.cfainstitute.org/investor/2019/01/11/a-renaissance-in-intangible-valuation-five-methods/</a>.
+</div>
+<div id="ref-pwc_valuing_2008" class="csl-entry" role="listitem">
+PwC. 2008. <span>“Valuing the Use of Recorded Music.”</span> IFPI PricewaterhouseCoopers. <a href="http://www.ifpi.org/content/library/valuing_the_use_of_recorded_music.pdf">http://www.ifpi.org/content/library/valuing_the_use_of_recorded_music.pdf</a>.
+</div>
+<div id="ref-wipo_copyright_treaty" class="csl-entry" role="listitem">
+WIPO. 1996a. <span>“<span>WIPO Copyright Treaty</span>.”</span> <span>World Intellectual Property Organization</span>. <a href="https://www.wipo.int/treaties/en/ip/wct/">https://www.wipo.int/treaties/en/ip/wct/</a>.
+</div>
+<div id="ref-wipo_wppt" class="csl-entry" role="listitem">
+———. 1996b. <span>“<span class="nocase">WIPO Performances and Phonograms Treaty</span>.”</span> <span>World Intellectual Property Organization</span>. <a href="https://www.wipo.int/treaties/en/ip/wppt/">https://www.wipo.int/treaties/en/ip/wppt/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This right is further elaborated by the WIPO Performances and Phonograms Treaty (WPPT). These copyright conventions are administered by the WIPO <span class="citation" data-cites="wipo_copyright_treaty wipo_wppt">(<a href="#ref-wipo_copyright_treaty" role="doc-biblioref">WIPO 1996a</a>, <a href="#ref-wipo_wppt" role="doc-biblioref">1996b</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Compulsory licensing never applies to private end-users.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
