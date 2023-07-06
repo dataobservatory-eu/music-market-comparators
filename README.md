@@ -8,7 +8,9 @@ This methodological paper, and the entire report, is developed in accordance wit
 
 Subjects: [Music industry](https://id.loc.gov/authorities/subjects/sh85141927.html); [Valuation](http://id.loc.gov/authorities/subjects/sh85141927); [Copyright](https://id.loc.gov/authorities/subjects/sh85032446.html)
 
-DOI: [10.5281/zenodo.8046977](https://zenodo.org/record/8046977)
+Revision history:
+0.1.0 First draft (2023-06-16), DOI: [10.5281/zenodo.8046977](https://zenodo.org/record/8046977).
+0.1.1 Incremental improvements incorporated (2023-07-06).
 
 ## How to Contribute?
 
